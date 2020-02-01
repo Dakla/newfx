@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="717.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Controller">
+    <AnchorPane layoutY="123.0" prefHeight="321.0" prefWidth="717.0" style="-fx-background-color: fafafa; -fx-border-color: silver;">
+        <TextField fx:id="loginLogin" layoutX="190.0" layoutY="94.0" prefHeight="38.0" prefWidth="337.0" promptText="Логин" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </TextField>
+        <PasswordField fx:id="loginPwd" layoutX="190.0" layoutY="141.0" prefHeight="38.0" prefWidth="337.0" promptText="Пароль" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </PasswordField>
+        <Label layoutX="236.0" layoutY="14.0" style="-fx-background-color: fafafa;" text="Авторизация" textFill="#686767">
+            <font>
+                <Font name="JetBrains Mono Regular" size="37.0" />
+            </font>
+        </Label>
+        <Button fx:id="loginLoginBtn" layoutX="302.0" layoutY="215.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="113.0" style="-fx-background-color: #2E3348;" text="Войти" textFill="WHITE">
+            <font>
+                <Font name="JetBrains Mono Regular" size="18.0" />
+            </font>
+        </Button>
+    </AnchorPane>
+    <Label layoutX="275.0" layoutY="14.0" text="Hello" textFill="WHITE">
+        <font>
+          <Font name="JetBrains Mono Regular" size="56.0" />
+        </font>
+    </Label>
+    <Button fx:id="loginRegBnt" layoutX="559.0" layoutY="14.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" style="-fx-background-color: f39c63;" text="Регистрация" textFill="WHITE">
+        <font>
+          <Font name="JetBrains Mono Regular" size="13.0" />
+        </font>
+    </Button>
+</AnchorPane>
