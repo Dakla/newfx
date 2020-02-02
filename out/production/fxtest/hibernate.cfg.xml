@@ -8,5 +8,13 @@
         <property name="connection.driver_class">org.postgresql.Driver</property>
 
         <mapping class="sample.domains.User" />
+        <mapping class="sample.domains.Cloth" />
+        <mapping class="sample.domains.ClothStorage" />
+        <mapping class="sample.domains.Furniture" />
+        <mapping class="sample.domains.FurnitureStorage" />
+        <mapping class="sample.domains.Order" />
+        <mapping class="sample.domains.OrderProduct" />
+        <mapping class="sample.domains.Product" />
+        <mapping class="sample.domains.ProductFurniture" />
     </session-factory>
 </hibernate-configuration>

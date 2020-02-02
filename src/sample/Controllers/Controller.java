@@ -62,7 +62,7 @@ public class Controller {
         try (Session session = HibernateUtils.getSession()){
             session.beginTransaction();
 
-            Query<?> query = session.createQuery("FROM User WHERE username='" + loginText + "'");
+            Query<?> query = session.createQuery("FROM User WHERE login='" + loginText + "'");
             if(query.getResultList().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Логин и пароль не совпадают", "Login", JOptionPane.ERROR_MESSAGE);
                 throw new Throwable("UserNotFound");

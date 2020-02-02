@@ -9,28 +9,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(nullable = false)
-    private String firstName;
-    @Column(nullable = false)
-    private String lastName;
-    @Column(nullable = false)
-    private String username;
+    private String login;
     @Column(nullable = false)
     private String password;
     @Column(nullable = false)
-    private String location;
-    @Column(nullable = false)
-    private String gender;
+    private String role;
+    private String firstName;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String username, String password, String location, String gender) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
+    public User(String login, String password, String role) {
+        this.login = login;
         this.password = password;
-        this.location = location;
-        this.gender = gender;
+        this.role = role;
     }
 
     public Long getId() {
@@ -41,28 +33,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getLogin() {
+        return login;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -73,19 +49,19 @@ public class User {
         this.password = password;
     }
 
-    public String getLocation() {
-        return location;
+    public String getRole() {
+        return role;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public String getGender() {
-        return gender;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 }

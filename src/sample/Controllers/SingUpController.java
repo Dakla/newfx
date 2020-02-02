@@ -39,17 +39,17 @@ public class SingUpController {
             if(!name.isEmpty() && !lastName.isEmpty() && !login.isEmpty() &&
                     !location.isEmpty() && !gend.isEmpty() && !password.isEmpty()
             ) {
-                try(Session session = HibernateUtils.getSession()) {
-                    session.beginTransaction();
-                    User user = new User(name, lastName, login, password, location, gend);
-                    session.save(user);
-                    session.getTransaction().commit();
-                    JOptionPane.showMessageDialog(null, "Вы успешно зарегистрировались",
-                            "Registration", JOptionPane.INFORMATION_MESSAGE);
-                    SceneUtils.changeScene("sample.fxml", singUpBtn.getScene());
-                } catch (Throwable cause) {
-                    cause.printStackTrace();
-                }
+//                try(Session session = HibernateUtils.getSession()) {
+//                    session.beginTransaction();
+//                    User user = new User(name, lastName, login, password, location, gend);
+//                    session.save(user);
+//                    session.getTransaction().commit();
+//                    JOptionPane.showMessageDialog(null, "Вы успешно зарегистрировались",
+//                            "Registration", JOptionPane.INFORMATION_MESSAGE);
+//                    SceneUtils.changeScene("sample.fxml", singUpBtn.getScene());
+//                } catch (Throwable cause) {
+//                    cause.printStackTrace();
+//                }
             } else {
                 JOptionPane.showMessageDialog(null, "Что-то пошло не так", "Registration",
                         JOptionPane.ERROR_MESSAGE);
