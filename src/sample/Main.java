@@ -17,6 +17,7 @@ public class Main extends Application {
         primaryStage.setTitle("Test");
         primaryStage.setScene(new Scene(root, 717, 443));
         primaryStage.show();
+
         try (Session session = HibernateUtils.getSession()) {
             session.beginTransaction();
             session.getTransaction().commit();

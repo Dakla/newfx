@@ -1,0 +1,61 @@
+url=jdbc:mysql://localhost:3306/hybrisdb?characterEncoding=latin1&useConfigs=maxPerformance
+
+Stage stage = (Stage) table.getScene().getWindow();
+PrinterJob printerJob = PrinterJob.createPrinterJob();
+if(printerJob.showPrintDialog(stage.getOwner()) && printerJob.printPage(table))
+    printerJob.endJob(); 
+    
+    
+    public User getUser(String response) throws JSONException {
+        JSONObject userJson = new JSONObject(response);
+        long id = userJson.getLong("id");
+        String name = userJson.getString("name");
+        String nick = userJson.getString("screen_name");
+        String location = userJson.getString("location");
+        String description = userJson.getString("description");
+        String imageUrl = userJson.getString("profile_image_url");
+        int followersCount = userJson.getInt("followers_count");
+        int followingCount = userJson.getInt("favourites_count");
+
+        return new User(id, imageUrl, name, nick, description, location, followingCount, followersCount);
+    }
+
+    
+    public class HttpClient {
+    private static final String HEADER_AUTHORIZATION = "Authorization";
+    private static final String GET = "GET";
+    private final JsonParser jsonParser;
+
+    public HttpClient(){
+        jsonParser = new JsonParser();
+    }
+
+    public User readUserInfo(long userId) throws IOException, JSONException {
+        String requestUrl = "https://api.twitter.com/1.1/users/show.json?user_id=" + userId;
+
+        URL url = new URL(requestUrl);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        // add auth header to request
+        String authHeader = getAuthHeader(requestUrl);
+        connection.setRequestProperty(HEADER_AUTHORIZATION, authHeader);
+
+        connection.connect();
+
+        InputStream in;
+        int status = connection.getResponseCode();
+        if (status != HttpURLConnection.HTTP_OK) {
+            in = connection.getErrorStream();
+        } else {
+            in = connection.getInputStream();
+        }
+
+        String response = convertStreamToString(in);
+        User user = jsonParser.getUser(response);
+
+        return user;
+    }
+
+    // остальной код ниже не изменился
+}
+
