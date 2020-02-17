@@ -16,5 +16,7 @@
         <mapping class="sample.domains.OrderProduct" />
         <mapping class="sample.domains.Product" />
         <mapping class="sample.domains.ProductFurniture" />
+        <mapping class="sample.domains.ClothUnits" />
+        <mapping class="sample.domains.ProductUtils" />
     </session-factory>
 </hibernate-configuration>

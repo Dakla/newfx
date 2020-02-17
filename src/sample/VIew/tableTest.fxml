@@ -3,8 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.tableTest">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.TableTest">
    <children>
-      <TableView fx:id="tableTest" editable="true" />
+      <TableView fx:id="tableTest" editable="true" layoutY="35.0" prefHeight="365.0" prefWidth="600.0" />
+      <Button fx:id="back" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

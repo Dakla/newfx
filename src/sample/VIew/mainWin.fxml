@@ -12,10 +12,10 @@
                 <Font name="JetBrains Mono Regular" size="37.0" />
             </font>
         </Label>
-        <ImageView fx:id="imgBtn" fitHeight="130.0" fitWidth="206.0" layoutX="256.0" layoutY="97.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <Image url="@../assets/1.jpg"/>
+        <ImageView fx:id="imgBtn" fitHeight="130.0" fitWidth="206.0" layoutX="256.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../assets/1.jpg" />
         </ImageView>
+      <Button fx:id="back" mnemonicParsing="false" text="Button" />
     </AnchorPane>
     <Label layoutX="275.0" layoutY="14.0" text="Hello" textFill="WHITE">
         <font>

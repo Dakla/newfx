@@ -54,23 +54,38 @@ public class Controller {
         });
 
         loginRegBnt.setOnAction(event -> {
-            SceneUtils.changeScene("singUp.fxml", loginRegBnt.getScene());
+            try {
+                loginRegBnt.getScene().setRoot(FXMLLoader.load(getClass().getResource("/sample/VIew/singUp.fxml")));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 
     private void loginUser(String loginText, String password) {
         try (Session session = HibernateUtils.getSession()){
             session.beginTransaction();
-
             Query<?> query = session.createQuery("FROM User WHERE login='" + loginText + "'");
             if(query.getResultList().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Логин и пароль не совпадают", "Login", JOptionPane.ERROR_MESSAGE);
                 throw new Throwable("UserNotFound");
             }
             else {
                 User user = (User) query.getSingleResult();
                 if (user.getPassword().equals(password)) {
-                    SceneUtils.changeScene("mainWin.fxml", loginLoginBtn.getScene());
+                    switch (user.getRole()) {
+                        case "Заказчик": {
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample/VIew/empWin.fxml"));
+                            Parent root = loader.load();
+                            EmpController controller = loader.getController();
+                            controller.setUserId(user.getId());
+                            loginLoginBtn.getScene().setRoot(root);
+                            break;
+                        }
+                        case "Менеджер": loginLoginBtn.getScene().setRoot(FXMLLoader.load(getClass().getResource("/sample/VIew/manWin.fxml"))); break;
+                        case "Кладовщик": loginLoginBtn.getScene().setRoot(FXMLLoader.load(getClass().getResource("/sample/VIew/kladWin.fxml")));break;
+                        case "Дирекция": loginLoginBtn.getScene().setRoot(FXMLLoader.load(getClass().getResource("/sample/VIew/dirWin.fxml")));break;
+                        default: break;
+                    }
                 } else {
                     JOptionPane.showMessageDialog(null, "Логин и пароль не совпадают", "Login", JOptionPane.ERROR_MESSAGE);
                 }

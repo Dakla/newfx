@@ -29,12 +29,12 @@
     </AnchorPane>
     <Label layoutX="275.0" layoutY="14.0" text="Hello" textFill="WHITE">
         <font>
-          <Font name="JetBrains Mono Regular" size="56.0" />
+            <Font name="JetBrains Mono Regular" size="56.0" />
         </font>
     </Label>
     <Button fx:id="loginRegBnt" layoutX="559.0" layoutY="14.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" style="-fx-background-color: f39c63;" text="Регистрация" textFill="WHITE">
         <font>
-          <Font name="JetBrains Mono Regular" size="13.0" />
+            <Font name="JetBrains Mono Regular" size="13.0" />
         </font>
     </Button>
 </AnchorPane>

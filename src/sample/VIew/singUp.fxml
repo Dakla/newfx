@@ -11,48 +11,28 @@
         </font>
     </Label>
     <AnchorPane layoutY="123.0" prefHeight="321.0" prefWidth="717.0" style="-fx-background-color: fafafa; -fx-border-color: silver;">
-      <TextField fx:id="singUpName" layoutX="14.0" layoutY="25.0" prefHeight="38.0" prefWidth="337.0" promptText="Имя" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-        <TextField fx:id="singUpLogin" layoutX="14.0" layoutY="76.0" prefHeight="38.0" prefWidth="337.0" promptText="Логин" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
+        <TextField fx:id="name" layoutX="14.0" layoutY="25.0" prefHeight="43.0" prefWidth="690.0" promptText="Имя" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
             <font>
                 <Font size="17.0" />
             </font>
         </TextField>
-        <PasswordField fx:id="singUpPwd" layoutX="366.0" layoutY="76.0" prefHeight="38.0" prefWidth="337.0" promptText="Пароль" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
+        <TextField fx:id="login" layoutX="14.0" layoutY="76.0" prefHeight="43.0" prefWidth="690.0" promptText="Логин" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </TextField>
+        <PasswordField fx:id="password" layoutX="14.0" layoutY="130.0" prefHeight="43.0" prefWidth="690.0" promptText="Пароль" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
             <font>
                 <Font size="17.0" />
             </font>
         </PasswordField>
-        <Button fx:id="singUpBtn" layoutX="282.0" layoutY="272.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: #2E3348;" text="Регистрация" textFill="WHITE">
+        <ChoiceBox fx:id="role" layoutX="17.0" layoutY="186.0" prefHeight="43.0" prefWidth="690.0" style="-fx-background-color: FAFAFA; -fx-border-color: Silver; -fx-border-radius: 5px;" />
+        <Button fx:id="singUp" layoutX="282.0" layoutY="272.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: #2E3348;" text="Регистрация" textFill="WHITE">
             <font>
                 <Font name="JetBrains Mono Regular" size="18.0" />
             </font>
         </Button>
-      <TextField fx:id="singUpLastName" layoutX="366.0" layoutY="25.0" prefHeight="38.0" prefWidth="337.0" promptText="Фамилия" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="singUpCountry" layoutX="190.0" layoutY="141.0" prefHeight="38.0" prefWidth="337.0" promptText="Страна" style="-fx-background-color: fafafa; -fx-border-color: Silver; -fx-border-radius: 5px;">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <RadioButton fx:id="singUpGenderM" layoutX="256.0" layoutY="211.0" mnemonicParsing="false" style="-fx-background-color: fafafa;" text="Мужчина">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="Gender" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="singUpGenderF" layoutX="359.0" layoutY="211.0" mnemonicParsing="false" style="-fx-background-color: fafafa;" text="Женщина" toggleGroup="$Gender">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </RadioButton>
+      <Label fx:id="error" layoutX="16.0" layoutY="3.0" opacity="0.68" prefHeight="22.0" prefWidth="690.0" style="-fx-background-color: pink;" text="Вы ввели неверные данные!" textAlignment="CENTER" textFill="RED" visible="false" />
     </AnchorPane>
+   <Button fx:id="back" mnemonicParsing="false" text="&lt;=" />
 </AnchorPane>

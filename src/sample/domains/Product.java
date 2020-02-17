@@ -21,6 +21,9 @@ public class Product {
     private List<Cloth> cloths;
     @OneToMany(mappedBy = "furniture", cascade = CascadeType.ALL)
     private Set<ProductFurniture> furnitures;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = false)
+    private Set<ProductUtils> units;
 
     public Product() {
     }
@@ -102,5 +105,18 @@ public class Product {
     public void addFurnitures(Furniture furniture, String place, int amount) {
         ProductFurniture productFurniture = new ProductFurniture(furniture, this, place, amount);
         furnitures.add(productFurniture);
+    }
+
+    public Set<ProductUtils> getUnits() {
+        return units;
+    }
+
+    public void setUnits(Set<ProductUtils> units) {
+        this.units = units;
+    }
+
+    public void addUnits(String name, double amount, boolean defaultUntis) {
+        ProductUtils productUtils = new ProductUtils(this, name, amount, defaultUntis);
+        units.add(productUtils);
     }
 }

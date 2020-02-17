@@ -2,6 +2,7 @@ package sample.domains;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Cloth {
@@ -20,17 +21,21 @@ public class Cloth {
     private String picture;
     private String image;
     private String comp;
+    @OneToMany
+    @JoinColumn(nullable = false)
+    private Set<ClothUnits> units;
     @ManyToMany
     private List<Product> product;
 
     public Cloth() {
     }
 
-    public Cloth(String name, Double width, Double height, Double price) {
+    public Cloth(String name, Double width, Double height, Double price, Set<ClothUnits> units) {
         this.name = name;
         this.width = width;
         this.height = height;
         this.price = price;
+        this.units = units;
     }
 
     public Long getId() {
@@ -111,5 +116,13 @@ public class Cloth {
 
     public void setProduct(List<Product> product) {
         this.product = product;
+    }
+
+    public Set<ClothUnits> getUnits() {
+        return units;
+    }
+
+    public void setUnits(Set<ClothUnits> units) {
+        this.units = units;
     }
 }
