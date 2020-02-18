@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.hibernate.Session;
 import sample.Utils.HibernateUtils;
+import sample.Utils.HttpClient;
+import sample.Utils.JSONParsing;
 import sample.domains.User;
 
 public class Main extends Application {
@@ -18,10 +20,14 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 717, 443));
         primaryStage.show();
 
-        try (Session session = HibernateUtils.getSession()) {
-            session.beginTransaction();
-            session.getTransaction().commit();
-        }
+        HttpClient httpClient = new HttpClient();
+
+        httpClient.readUserInfo();
+
+//        try (Session session = HibernateUtils.getSession()) {
+//            session.beginTransaction();
+//            session.getTransaction().commit();
+//        }
     }
 
 

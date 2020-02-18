@@ -21,8 +21,8 @@ public class ManController {
                 Stage stage = new Stage();
                 stage.initOwner(ost.getScene().getWindow());
                 stage.setScene(new Scene(loader.load()));
-                TableTest controller = loader.getController();
-                controller.getText("Test num 1");
+//                TableTest controller = loader.getController();
+//                controller.getText("Test num 1");
                 stage.showAndWait();
             } catch (IOException e) {
                 e.printStackTrace();
